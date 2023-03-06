@@ -67,7 +67,6 @@ trunc_at = args['trunc_at']
 
 
 
-
 policy = policy_model(prod_emb).cuda()
 
 if method == 'exact' :
@@ -88,36 +87,6 @@ elif method == 'uniform' :
     
     train_log, val_log_index, val_log, exec_time = uniform_snips_approximate_reinforce(policy, index, P, n_samples, contexts_train, rewards_train, 
                                                                         epochs, bsize, lr, reg, contexts_val, rewards_val)
-    
-elif method == 'bpr' : 
-    
-    path = method + '_Ns:%d_Lr:%.6f'%(n_samples, lr)
-    
-    print('-------------BPR TRAINING---------------')
-    
-    train_log, val_log_index, val_log, exec_time = bpr_training(policy, index, P, n_samples, contexts_train, rewards_train, 
-                                                 epochs, bsize, lr, reg, contexts_val, rewards_val)
-    
-    
-elif method == 'poem' : 
-    
-    path = method + '_Lr:%.6f'%lr
-    
-    print('-------------POEM TRAINING---------------')
-    
-    train_log, val_log_index, val_log, exec_time = poem_training(policy, index, n_samples, contexts_train, rewards_train, 
-                                                 epochs, bsize, lr, reg, contexts_val, rewards_val)
-    
-
-
-elif method == 'pbp' : 
-    
-    path = method + '_Ns:%d_Lr:%.6f'%(n_samples, lr)
-    
-    print('-------------PBP TRAINING---------------')
-    
-    train_log, val_log_index, val_log, exec_time = PAC_Bayes_training(policy, index, P, n_samples, contexts_train, rewards_train, 
-                                                    epochs, bsize, lr, reg, contexts_val, rewards_val)
       
 elif method == 'mixture':
     
@@ -128,8 +97,10 @@ elif method == 'mixture':
     train_log, val_log_index, val_log, exec_time = mixture_snips_approximate_reinforce(policy, index, P, n_samples, trunc_at, eps, 
                                                                         contexts_train, rewards_train, epochs, bsize, lr, reg,
                                                                         contexts_val, rewards_val)
-
-
+    
+else:
+    print("method not supported")
+    print("method should be either exact, uniform, mixture")
 
 
 

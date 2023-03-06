@@ -16,7 +16,7 @@ parser = ArgumentParser()
 
 parser.add_argument("--dataset", type=str, default='twitch')
 parser.add_argument("--N_sub", type=int, default=500_000)
-parser.add_argument("--K", type=int, default=10)
+parser.add_argument("--K", type=int, default=1000)
 parser.add_argument("--seed", type=int, default=0)
 
 args = vars(parser.parse_args())
