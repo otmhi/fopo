@@ -3,7 +3,7 @@ from tqdm import tqdm
 from scipy import sparse
 import numpy as np
 
-df = pd.read_csv('goxodreads_interactions.csv')
+df = pd.read_csv('goodreads_interactions.csv')
 
 df = df[df['is_read'] > 0.5]
 users = df['user_id'].unique()
