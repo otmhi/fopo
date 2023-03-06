@@ -11,7 +11,7 @@ A Conda virtual Python environment can be created from the env.yml file holding 
     
 ## Datasets
 
-The experiments in the paper use the Twitch and Goodreads datasets. They should be downloaded, extract their csv files and put in the preprocessing folder. The csv files are then transformed to sparse datasets by running the following scripts:
+The experiments in the paper use the [Twitch](https://cseweb.ucsd.edu/~jmcauley/datasets.html#twitch) (full_a.csv) and [Goodreads](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/shelves) (goodreads_interactions.csv) datasets. They should be downloaded, extract their csv files and put in the preprocessing folder. The csv files are then transformed to sparse datasets by running the following scripts:
 
     python goodreads_to_sparse.py
     python twitch_to_sparse.py
