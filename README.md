@@ -34,11 +34,11 @@ GoodReads:
     
 ### Running Experiments
 
-Once the setup folder is created, we can run an experiment to test a method in {exact, uniform, mixture} for the specific setup. Given the <folder path>, we can for example test exact reinforce by running the following script:
+Once the setup folder is created, we can run an experiment to test a method in {exact, uniform, mixture} for the specific setup. Given the "folder path", we can for example test exact reinforce by running the following script:
     
     python launch_experiment.py --exp_folder <folder path> --method exact
     
-All the results of the experiment are then stored in the same <folder path>.
+All the results of the experiment are then stored in the same "folder path".
     
 
     
